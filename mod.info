@@ -1,0 +1,6 @@
+name=The Alcoholic [ AUTO DRINK ] p_exp
+poster=poster.png
+icon=icon.png
+id=thealcoholic_autodrink_p_exp
+description=Patch to add AutoDrink support for The Alcoholic Expansion
+require=thealcoholic_autodrink,thealcoholic_expansion

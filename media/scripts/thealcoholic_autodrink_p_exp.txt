@@ -1,0 +1,44 @@
+module TheAlcoholic {
+    imports {
+        Base
+    }
+
+    item FlaskHoochFull
+	{
+		DisplayName = Flask of Hooch,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 1,
+		Icon = TheAlcoholic_Flask,
+		EvolvedRecipe = Beverage:4;Beverage2:4;HotDrink:4;HotDrinkRed:4;HotDrinkWhite:4;HotDrinkSpiffo:4;HotDrinkTea:4, /*;Soup:4;Stew:4,*/
+		FoodType = Liquor,
+		AlcoholPower = 4,
+		Alcoholic = TRUE,
+		CantBeFrozen = TRUE,
+		EatType = Bourbon,
+		Packaged = TRUE,
+		ReplaceOnUse = FlaskEmpty,
+		HungerChange = -15,
+		ThirstChange = -15,
+		UnhappyChange = -5,
+		Calories = 1800,
+		Carbohydrates = 0,
+		Lipids = 0,
+		Proteins = 0,
+		CustomContextMenu = Drink,
+		CustomEatSound = DrinkingFromBottleGlass,
+		StaticModel = Flask,
+		WorldStaticModel = FlaskGround,
+		Tags = Liquor;Flask,
+	}
+    
+    recipe Fill Flask {
+		FlaskEmpty,
+		HoochFull,
+        
+		Result:FlaskHoochFull,
+		Time:100.0,
+		Category:TheAlcoholic,
+        OnCreate:TheAlcoholic.AutoDrink.onCreateFlaskHooch,
+	}
+}
